@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ajax那些事 - Skytrajectory-白日梦想家</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="skytrajectory,"> 
+    <meta name="description" content="Ajax
+1.XML可扩展标记语言
+XML用于被设计来传输和存储数据，没有预定义标签
+HTML是预定义标签，展示数据
+
+但现在已经被JSON取代
+
+2.AJAX特点1.无需刷新页面
+2.根据用户事件,"> 
+    <meta name="author" content="Skytrajectory"> 
+    <link rel="alternative" href="atom.xml" title="Skytrajectory-白日梦想家" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Skytrajectory-白日梦想家</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://skytrajectory.gitee.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Ajax那些事</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Ajax那些事</h1>
+        <div class="stuff">
+            <span>二月 01, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><hr>
+<h3 id="1-XML"><a href="#1-XML" class="headerlink" title="1.XML"></a>1.XML</h3><p>可扩展标记语言</p>
+<p>XML用于被设计来传输和存储数据，没有预定义标签</p>
+<p>HTML是预定义标签，展示数据</p>
+<p><img src="image-20210114151707968.png" alt="image-20210114151707968"></p>
+<p>但现在已经被JSON取代</p>
+<p><img src="image-20210114151908967.png" alt="image-20210114151908967"></p>
+<h3 id="2-AJAX特点"><a href="#2-AJAX特点" class="headerlink" title="2.AJAX特点"></a>2.AJAX特点</h3><p>1.无需刷新页面</p>
+<p>2.根据用户事件更新页面内容</p>
+<p>3.没有历史记录</p>
+<p>4.有跨域问题</p>
+<p>5.SEO不友好，响应体没有相关的信息，爬虫爬不到相关的信息</p>
+<p>6.IE浏览器缓存问题<img src="image-20210114192532021.png" alt="image-20210114192532021"></p>
+<p>通过更改date.now（）使得每一次的URL都不一样跨域避免IE直接使用缓存，重新发送请求</p>
+<hr>
+<h3 id="3-HTTP"><a href="#3-HTTP" class="headerlink" title="3.HTTP"></a>3.HTTP</h3><p><img src="image-20210114153105435.png" alt="image-20210114153105435"></p>
+<h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><p><img src="image-20210114153120744.png" alt="image-20210114153120744"></p>
+<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><p><img src="image-20210114153148194.png" alt="image-20210114153148194"></p>
+<h3 id="4-原生AJAX代码"><a href="#4-原生AJAX代码" class="headerlink" title="4.原生AJAX代码"></a>4.原生AJAX代码</h3><p>post</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> abc = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;result&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    abc.addEventListener(<span class="string">&quot;mouseover&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        xhr.open(<span class="string">&#x27;POST&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8666/server&#x27;</span>);</span></span><br><span class="line"><span class="javascript">        xhr.send(<span class="string">&#x27;a=100&amp;b=200&amp;c=300&#x27;</span>);</span></span><br><span class="line"><span class="javascript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">if</span>(<span class="params">xhr.status &gt;=<span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span></span>)</span>&#123;</span></span><br><span class="line">                abc.innerHTML = xhr.response;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>get</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;button&#x27;</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        xhr.open(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8666/server&#x27;</span>);</span></span><br><span class="line">        xhr.send();</span><br><span class="line"><span class="javascript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState === <span class="number">4</span></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">if</span>(<span class="params">xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(xhr.status);</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(xhr.response);</span></span><br><span class="line">                    result.innerHTML = xhr.response;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>json</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">    xhr.responseType = <span class="string">&#x27;json&#x27;</span>;</span></span><br><span class="line"><span class="javascript">    xhr.open(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8666/json-server&#x27;</span>);</span></span><br><span class="line">        xhr.send();</span><br><span class="line"><span class="javascript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState === <span class="number">4</span></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">if</span>(<span class="params">xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(xhr.status);</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(xhr.response);</span></span><br><span class="line">                    result.innerHTML = xhr.response.name;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>取消请求</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btns = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> x = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">    btns[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        x = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        x.open(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8666/delay&#x27;</span>);</span></span><br><span class="line">        x.send();</span><br><span class="line"><span class="javascript">        <span class="comment">// x.onreadystatechange = function()&#123;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//     if(x.readyState === 4)&#123;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//         if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300)&#123;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//             console.log(xhr.status);</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//             console.log(xhr.response);</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//             result.innerHTML = xhr.response;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//         &#125;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// &#125;</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    btns[<span class="number">1</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line">        x.abort();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>取消重复请求</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;button&#x27;</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> x = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> isSending = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;        </span></span><br><span class="line">        if(isSending) x.abort();</span><br><span class="line"><span class="javascript">        x = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        isSending = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        x.open(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8666/delay&#x27;</span>);</span></span><br><span class="line">        x.send();</span><br><span class="line"><span class="javascript">        x.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">if</span>(<span class="params">x.readyState === <span class="number">4</span></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                isSending = <span class="literal">false</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>服务器代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; request, response &#125; = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/server&#x27;</span>,<span class="function">(<span class="params">request,response</span>)=&gt;</span>&#123;</span><br><span class="line">    response.setHeader(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>,<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    response.send(<span class="string">&#x27;Hello express server&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">8666</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;监听中&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">&#x27;/server&#x27;</span>,<span class="function">(<span class="params">request,response</span>)=&gt;</span>&#123;</span><br><span class="line">    response.setHeader(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>,<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    response.send(<span class="string">&#x27;Hello AJAX POST&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.all(<span class="string">&#x27;/json-server&#x27;</span>,<span class="function">(<span class="params">request,response</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> data = &#123;</span><br><span class="line">        name:<span class="string">&#x27;abb&#x27;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="built_in">JSON</span>.stringify(data);</span><br><span class="line">    response.setHeader(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>,<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    response.send(data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/delay&#x27;</span>,<span class="function">(<span class="params">request,response</span>)=&gt;</span>&#123;</span><br><span class="line">    response.setHeader(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>,<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        response.send(<span class="string">&#x27;延时响应&#x27;</span>);</span><br><span class="line">    &#125;,<span class="number">3000</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Jquery的AJAX"><a href="#5-Jquery的AJAX" class="headerlink" title="5.Jquery的AJAX"></a>5.Jquery的AJAX</h3><p>$.get(url, [data], [callback], [type])<br>url:请求的URL地址。<br>data:请求携带的参数。<br>callback:载入成功时回调函数。<br>type:设置返回内容格式, xml, html, script, json, text,_default。</p>
+<p>$.post(url, [data], [callback], [type])<br>url:请求的URL地址。<br>data:请求携带的参数。<br>callback:载入成功时回调函数。<br>type:设置返回内容格式, xml, html, script, json, text,_default。</p>
+<hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        $.get(<span class="string">&#x27;http://127.0.0.1:8666/jquery-server&#x27;</span>,&#123;<span class="attr">a</span>:<span class="number">100</span>,<span class="attr">b</span>:<span class="number">200</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">        &#125;,<span class="string">&#x27;json&#x27;</span>)</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="javascript">    $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        $.post(<span class="string">&#x27;http://127.0.0.1:8666/jquery-server&#x27;</span>,&#123;<span class="attr">a</span>:<span class="number">100</span>,<span class="attr">b</span>:<span class="number">200</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(data);</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-AXIOS"><a href="#6-AXIOS" class="headerlink" title="6.AXIOS"></a>6.AXIOS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//GET 请求</span></span><br><span class="line">axios.get(</span><br><span class="line">    <span class="string">&#x27;/axios-server&#x27;</span>,</span><br><span class="line">    <span class="comment">//url参数</span></span><br><span class="line">    &#123;<span class="attr">params</span>:&#123;</span><br><span class="line">        id:<span class="number">100</span>,</span><br><span class="line">        vip:<span class="number">7</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//头参数</span></span><br><span class="line">    headers:&#123;</span><br><span class="line">        name:<span class="string">&#x27;sjw&#x27;</span>,</span><br><span class="line">        age:<span class="number">20</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//POST</span></span><br><span class="line">axios.post(<span class="string">&#x27;/axios-server&#x27;</span>,</span><br><span class="line">    &#123;</span><br><span class="line">        username:<span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">        password:<span class="string">&#x27;admin&#x27;</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">    params:&#123;</span><br><span class="line">        id:<span class="number">200</span>,</span><br><span class="line">        vip:<span class="number">9</span></span><br><span class="line">    &#125;,</span><br><span class="line">    headers:&#123;</span><br><span class="line">        he:<span class="number">100</span>,</span><br><span class="line">        we:<span class="number">100</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//axios方法</span></span><br><span class="line">			axios(&#123;</span><br><span class="line">                method:<span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">                <span class="comment">//url</span></span><br><span class="line">                url:<span class="string">&#x27;/axios-server&#x27;</span>,</span><br><span class="line">                params:&#123;</span><br><span class="line">                    vip:<span class="number">10</span>,</span><br><span class="line">                    le:<span class="number">30</span></span><br><span class="line">                &#125;,</span><br><span class="line">                headers:&#123;</span><br><span class="line">                    a:<span class="number">200</span>,</span><br><span class="line">                    b:<span class="number">320</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">                data:&#123;</span><br><span class="line">                    yy:<span class="string">&#x27;ss&#x27;</span>,</span><br><span class="line">                    kk:<span class="string">&#x27;sasa&#x27;</span>,</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(res);</span><br><span class="line">            &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-fetch"><a href="#7-fetch" class="headerlink" title="7.fetch"></a>7.fetch</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        fetch(<span class="string">&#x27;http://127.0.0.1:8666/fetch-server?vip=10&#x27;</span>,&#123;</span></span><br><span class="line"><span class="javascript">            method:<span class="string">&#x27;POST&#x27;</span>,</span></span><br><span class="line">            headers:&#123;</span><br><span class="line"><span class="javascript">                name:<span class="string">&#x27;sjw&#x27;</span>,</span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">            body:<span class="string">&#x27;username=admin&amp;password=admin&#x27;</span></span></span><br><span class="line"><span class="javascript">        &#125;).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> response.json();</span></span><br><span class="line">            </span><br><span class="line"><span class="javascript">        &#125;).then(<span class="function"><span class="params">response</span> =&gt;</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(response);</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-同源策略"><a href="#8-同源策略" class="headerlink" title="8.同源策略"></a>8.同源策略</h3><p>同源策略是一种浏览器安全策略</p>
+<p>同源：协议，域名端口号，必须完全相同</p>
+<p>违背同源就是跨源</p>
+<h3 id="9-JSONP"><a href="#9-JSONP" class="headerlink" title="9.JSONP"></a>9.JSONP</h3><p><img src="image-20210115153212395.png" alt="image-20210115153212395"></p>
+<h3 id="10-CORS"><a href="#10-CORS" class="headerlink" title="10.CORS"></a>10.CORS</h3><p>1)CORS是什么?<br>CORS(Cross-Origin Resource Sharing)，跨域资源共享。CORS是官方的跨域解决方案，它的特点是不需要在客户端做任何特殊的操作，完全在服务器中进行处理，支持get和 post请求。跨域资源共享标准新增多一组HTTP首部字段，允许服务器声明哪些源站通过浏览器有权限访问哪些资源<br>2)CORS怎么工作的?<br>CORS是通过设置一个响应头来告诉浏览器，该请求允许跨域，浏览器收到该响应以后就会对响应放行。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=1436614177.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=731250.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=729638.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://music.163.com/song/media/outer/url?id=527479.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='http://music.163.com/song/media/outer/url?id=1417631440.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='http://music.163.com/song/media/outer/url?id=729835.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-20,"hOffset":0},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
