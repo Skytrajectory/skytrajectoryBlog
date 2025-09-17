@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>康威生命游戏 - Skytrajectory-白日梦想家</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="skytrajectory,"> 
+    <meta name="description" content="
+
+项目概述康威生命游戏模拟器是一个基于C++实现的细胞自动机模拟程序。该项目实现了经典的康威生命游戏规则，并提供了多种游戏模式，包括随机模式、存档加载以及特定图案检测功能。
+功能特性核心功能
+随机,"> 
+    <meta name="author" content="Skytrajectory"> 
+    <link rel="alternative" href="atom.xml" title="Skytrajectory-白日梦想家" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Skytrajectory-白日梦想家</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">康威生命游戏</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">康威生命游戏</h1>
+        <div class="stuff">
+            <span>九月 17, 2025</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C-%EF%BC%8C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">C++，游戏开发</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <iframe height="450" width="800" src="//player.bilibili.com/player.html?isOutside=true&aid=113645908394597&bvid=BV1o5BgYoEp5&cid=27325107768&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>康威生命游戏模拟器是一个基于C++实现的细胞自动机模拟程序。该项目实现了经典的康威生命游戏规则，并提供了多种游戏模式，包括随机模式、存档加载以及特定图案检测功能。</p>
+<h2 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h2><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><ul>
+<li><strong>随机模拟</strong>: 生成随机初始状态并模拟生命演化过程</li>
+<li><strong>游戏存档</strong>: 支持保存和加载游戏状态</li>
+<li><strong>实时控制</strong>: 支持暂停、保存和返回菜单操作</li>
+<li><strong>多种检测模式</strong>: 可检测特定生命图案的出现</li>
+</ul>
+<h3 id="特殊检测模式"><a href="#特殊检测模式" class="headerlink" title="特殊检测模式"></a>特殊检测模式</h3><ol>
+<li><strong>方块或蜂巢检测</strong>: 检测稳定结构（方块和蜂巢）</li>
+<li><strong>闪烁灯或蟾蜍检测</strong>: 检测周期为2的振荡器</li>
+<li><strong>滑翔机或轻量级飞船检测</strong>: 检测移动的太空船图案</li>
+</ol>
+<h3 id="附加功能"><a href="#附加功能" class="headerlink" title="附加功能"></a>附加功能</h3><ul>
+<li><strong>ERN表格显示</strong>: 展示实验相关数据</li>
+<li><strong>自适应显示</strong>: 支持不同网格大小的模拟</li>
+<li><strong>用户友好界面</strong>: 提供清晰的菜单和交互提示</li>
+</ul>
+<h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><h3 id="主要类结构"><a href="#主要类结构" class="headerlink" title="主要类结构"></a>主要类结构</h3><h4 id="InitialData-模板结构体"><a href="#InitialData-模板结构体" class="headerlink" title="InitialData 模板结构体"></a>InitialData 模板结构体</h4><p>cpp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template &lt;typename T&gt;</span><br><span class="line">struct InitialData &#123;</span><br><span class="line">    T width;        &#x2F;&#x2F; 网格宽度</span><br><span class="line">    T height;       &#x2F;&#x2F; 网格高度</span><br><span class="line">    T aliveCount;   &#x2F;&#x2F; 初始活细胞数量</span><br><span class="line">    T steps;        &#x2F;&#x2F; 模拟步数</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>支持运算符重载，便于数据处理和比较。</p>
+<h4 id="GameOfLife-类"><a href="#GameOfLife-类" class="headerlink" title="GameOfLife 类"></a>GameOfLife 类</h4><p>核心游戏类，实现生命游戏的主要功能：</p>
+<ul>
+<li><strong>构造函数</strong>: 支持随机初始化和从已有网格初始化</li>
+<li><strong>游戏逻辑</strong>:<ul>
+<li><code>nextStep()</code>: 计算下一代细胞状态</li>
+<li><code>countAliveNeighbors()</code>: 计算邻居存活数</li>
+<li><code>allCellsDead()</code>: 检查是否所有细胞死亡</li>
+</ul>
+</li>
+<li><strong>图案检测</strong>:<ul>
+<li><code>matchPattern()</code>: 匹配单个图案</li>
+<li><code>matchPatterns()</code>: 匹配多个图案</li>
+<li><code>loadPattern()</code>: 从文件加载图案</li>
+<li>特定图案检测方法（isBlockOrBeehive等）</li>
+</ul>
+</li>
+<li><strong>游戏管理</strong>:<ul>
+<li><code>saveGame()</code>: 保存游戏状态</li>
+<li><code>checkForPause()</code>: 检查暂停和用户输入</li>
+<li><code>display()</code>: 显示当前网格状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><p>项目使用文本文件存储图案和游戏状态：</p>
+<ul>
+<li><strong>图案文件</strong>: block.txt, beeHive1.txt, beeHive2.txt等</li>
+<li><strong>游戏存档</strong>: 自定义文件名，包含网格尺寸和步数信息</li>
+<li><strong>ERN数据</strong>: ERN.txt存储实验相关数据</li>
+</ul>
+<h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><h3 id="编译和运行"><a href="#编译和运行" class="headerlink" title="编译和运行"></a>编译和运行</h3><p>bash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g++ -o game_of_life main.cpp</span><br><span class="line">.&#x2F;game_of_life</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="主菜单选项"><a href="#主菜单选项" class="headerlink" title="主菜单选项"></a>主菜单选项</h3><ol>
+<li><strong>开始新模拟</strong>: 输入网格尺寸、初始活细胞数和模拟步数</li>
+<li><strong>加载存档</strong>: 从文件恢复游戏状态并继续模拟</li>
+<li><strong>方块/蜂巢检测</strong>: 运行直到检测到方块或蜂巢图案</li>
+<li><strong>闪烁灯/蟾蜍检测</strong>: 运行直到检测到闪烁灯或蟾蜍图案</li>
+<li><strong>滑翔机/飞船检测</strong>: 运行直到检测到滑翔机或轻量级飞船</li>
+<li><strong>显示ERN表格</strong>: 查看实验数据</li>
+<li><strong>退出程序</strong></li>
+</ol>
+<h3 id="交互控制"><a href="#交互控制" class="headerlink" title="交互控制"></a>交互控制</h3><ul>
+<li><strong>空格键/P键</strong>: 暂停模拟</li>
+<li><strong>S键</strong>: 保存当前状态</li>
+<li><strong>M键</strong>: 返回主菜单</li>
+<li><strong>Y/N</strong>: 确认/取消操作</li>
+</ul>
+<h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><h3 id="网格表示"><a href="#网格表示" class="headerlink" title="网格表示"></a>网格表示</h3><p>使用二维整型数组表示细胞状态：</p>
+<ul>
+<li><code>0</code> 表示死细胞</li>
+<li><code>1</code> 表示活细胞</li>
+</ul>
+<h3 id="演化规则"><a href="#演化规则" class="headerlink" title="演化规则"></a>演化规则</h3><p>基于经典康威生命游戏规则：</p>
+<ol>
+<li>存活规则：活细胞有2或3个活邻居时存活</li>
+<li>死亡规则：活邻居少于2个或多于3个时死亡</li>
+<li>繁殖规则：死细胞有恰好3个活邻居时变为活细胞</li>
+</ol>
+<h3 id="图案匹配"><a href="#图案匹配" class="headerlink" title="图案匹配"></a>图案匹配</h3><p>通过从文件加载预定义图案模板，使用逐像素比较方法检测特定图案的出现。</p>
+<h2 id="扩展性"><a href="#扩展性" class="headerlink" title="扩展性"></a>扩展性</h2><p>项目设计具有良好的扩展性：</p>
+<ul>
+<li>可轻松添加新的检测图案</li>
+<li>支持自定义网格尺寸和模拟参数</li>
+<li>模块化设计便于功能扩展</li>
+</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>最小网格尺寸为30x30</li>
+<li>最小初始活细胞数为25</li>
+<li>图案文件需符合特定格式要求</li>
+<li>仅支持Windows平台（使用了conio.h和_kbhit()）</li>
+</ul>
+<h2 id="开发者信息"><a href="#开发者信息" class="headerlink" title="开发者信息"></a>开发者信息</h2><p>该项目展示了面向对象编程、模板使用、文件操作和用户交互设计等编程技术，适用于教育目的和生命游戏研究。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=1436614177.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=731250.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=729638.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://music.163.com/song/media/outer/url?id=527479.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='http://music.163.com/song/media/outer/url?id=1417631440.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='http://music.163.com/song/media/outer/url?id=729835.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-20,"hOffset":0},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
