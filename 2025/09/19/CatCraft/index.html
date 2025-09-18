@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>[作品集]CatCraft - Skytrajectory-白日梦想家</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="skytrajectory,"> 
+    <meta name="description" content="
+
+CatCraft项目概览CatCraft 是一个以物理与AI玩法为核心的第三人称小型游戏原型，使用 C++ 编写，基于已有框架（渲染、物理、网络已提供基础模块）。本项目主要在关卡生成、角色交互、,"> 
+    <meta name="author" content="Skytrajectory"> 
+    <link rel="alternative" href="atom.xml" title="Skytrajectory-白日梦想家" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Skytrajectory-白日梦想家</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">[作品集]CatCraft</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">[作品集]CatCraft</h1>
+        <div class="stuff">
+            <span>九月 19, 2025</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <iframe height="450" width="800" src="//player.bilibili.com/player.html?isOutside=true&aid=113645908394597&bvid=BV1o5BgYoEp5&cid=27325107768&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h2 id="CatCraft"><a href="#CatCraft" class="headerlink" title="CatCraft"></a>CatCraft</h2><h3 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h3><p>CatCraft 是一个以物理与AI玩法为核心的第三人称小型游戏原型，使用 C++ 编写，基于已有框架（渲染、物理、网络已提供基础模块）。本项目主要在关卡生成、角色交互、AI 行为、状态机与基础联网交互等方面完成了可玩的游戏循环与多项机制整合。</p>
+<h3 id="运行方式"><a href="#运行方式" class="headerlink" title="运行方式"></a>运行方式</h3><ul>
+<li>环境：Windows + Visual Studio（CMake/VCXProj 已在仓库中生成）</li>
+<li>打开 <code>CSC8503.sln</code>，选择可执行目标，编译并运行。</li>
+<li>入口：<code>CSC8503/Main.cpp</code>，游戏主循环构建于 <code>TutorialGame</code>。</li>
+</ul>
+<h3 id="核心玩法与目标"><a href="#核心玩法与目标" class="headerlink" title="核心玩法与目标"></a>核心玩法与目标</h3><ul>
+<li>作为主角“Cat”在迷宫中探索，收集全部小猫（Kittens），并在限时内安全带回“Home”以获胜。</li>
+<li>可拾取钥匙（Key）并开门（Door），有“农夫”（Keeper）会在你拿到钥匙时追击并抢走钥匙。</li>
+<li>可拾取猫头（Bonus）获得“超能力”（Super Power），以光线（Ray）推击/干扰前方对象。</li>
+</ul>
+<h3 id="已实现的主要功能"><a href="#已实现的主要功能" class="headerlink" title="已实现的主要功能"></a>已实现的主要功能</h3><ul>
+<li><p>迷宫关卡生成（基于网格文件）</p>
+<ul>
+<li>使用 <code>Assets/Data/TestGrid.txt</code> 作为导航/关卡蓝图。</li>
+<li>解析网格生成地板、墙体与交互物（Kitten/Key/Bonus/Home/Door/Keeper）。</li>
+<li>相关代码：<code>TutorialGame::InitMazeWorld</code>、<code>Add*ToWorld</code> 系列。</li>
+</ul>
+</li>
+<li><p>角色控制与相机</p>
+<ul>
+<li>物理驱动的主角控制：W/A/S/D 水平移动，SPACE 跳跃。</li>
+<li>支持“锁定目标”的第三人称跟随与鼠标环绕旋转（Yaw/Pitch 限制、四元数旋转）。</li>
+<li>相关代码：<code>LockedObjectMovement</code>、<code>RotateObjectTowards</code>、<code>UpdateGame</code> 中相机段。</li>
+</ul>
+</li>
+<li><p>互动物与胜负条件</p>
+<ul>
+<li>Kitten 收集：与“Cat”碰撞后通过 <code>PositionConstraint</code> 牵引跟随，计入收集数量。</li>
+<li>Home 胜利：收集满 <code>kittenTotalNum</code> 后与 Home 碰撞判定胜利。</li>
+<li>Bonus 超能力：拾取“CatHead”后激活 superPower，按住鼠标左键朝前方发射 Ray，给选中对象施加冲力。</li>
+<li>Key/Door：拾取 Key → <code>hasKey=true</code>；与 Door 碰撞且有钥匙时开门（取消碰撞体/隐藏）。</li>
+<li>Keeper 抢钥匙：当与 Keeper 碰撞且携带钥匙时，钥匙掉落并恢复在场景中。</li>
+<li>失败判定：<ul>
+<li>倒计时耗尽；</li>
+<li>从地图跌落（y&lt;-30）；</li>
+<li>敌人 Goose 接近至阈值内。</li>
+</ul>
+</li>
+<li>相关代码：<code>HandleCollision</code>、<code>UpdateGame</code> HUD/计时逻辑。</li>
+</ul>
+</li>
+<li><p>AI：敌人状态机（StateMachine）与寻路</p>
+<ul>
+<li>Goose（敌人）<ul>
+<li>导航寻路：基于 <code>NavigationGrid</code> 生成路径点并往返巡逻。</li>
+<li>状态切换：巡逻 Patrol ↔ 追击 Chase；距离阈值进入/退出追击。</li>
+<li>相关代码：<code>InitEnemyStateMachine</code>、<code>UpdateEnemyMovement</code>。</li>
+</ul>
+</li>
+<li>Keeper（农夫）<ul>
+<li>拥有钥匙的玩家才会触发追击；可见性用 Raycast 判定视线。</li>
+<li>追击过程中渲染颜色变化与 Debug 射线可视化。</li>
+<li>相关代码：<code>InitKeeperStateMachine</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>友方 AI：行为树（Behaviour Tree）</p>
+<ul>
+<li>Goat（Friend）<ul>
+<li>行为序列：先通过寻路寻找 Key（成功后记录路径并沿路径移动）。</li>
+<li>行为选择：若未能找到奖励则尝试“冻结敌人”（将 Goose 速度清零并变色）。</li>
+<li>相关代码：<code>InitFriendAIbehavior</code>、<code>UpdateFriendMovement</code>、<code>UpdateGameTree</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>选择/射线与物理交互</p>
+<ul>
+<li>切换锁定对象（L），基于鼠标/相机方向发射 Ray（在 superPower 下生效），对命中的对象施加力。</li>
+<li>右键对选中对象位置施加力（点击拾取/推动）。</li>
+<li>相关代码：<code>SelectObject</code>、<code>MoveSelectedObject</code>、<code>UpdateGame</code> 中 Raycast 段。</li>
+</ul>
+</li>
+<li><p>物理与约束示例</p>
+<ul>
+<li>使用 <code>PositionConstraint</code> 实现：<ul>
+<li>Cat-Kitten 牵引链；</li>
+<li><code>BridgeConstraintTest</code> 演示链式方块桥。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>菜单与状态管理（Pushdown State）</p>
+<ul>
+<li>主菜单（Start Game / Start As Client / Start As Server / Exit）。</li>
+<li>游戏态与暂停态（P 推入暂停栈，Enter 返回）。</li>
+<li>相关代码：<code>MenuStates.*</code>、<code>Main.cpp</code>。</li>
+</ul>
+</li>
+<li><p>基础联网交互（本地回环演示）</p>
+<ul>
+<li>Client/Server 初始化与连接、消息收发（字符串、分数包）。</li>
+<li>菜单中可直接以 Client 或 Server 模式启动（本机 127.0.0.1）。</li>
+<li>含 NetworkedGame 基础结构（状态同步留有扩展点）。</li>
+<li>相关代码：<code>TutorialGame::StartGame</code>、<code>TestNetworking</code>、<code>NetworkedGame.*</code>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="亮点与技术要点"><a href="#亮点与技术要点" class="headerlink" title="亮点与技术要点"></a>亮点与技术要点</h3><ul>
+<li>将“关卡生成 + 导航寻路 + FSM/BT + 物理交互 + HUD/倒计时 + 菜单状态栈 + 基础网络”整合为完整可玩循环。</li>
+<li>Keeper 使用“条件驱动”的 FSM：仅在玩家拿到 Key 且视线可达时进入追击，形成策略性博弈。</li>
+<li>Friend 使用行为树：先执行“找钥匙”的 Sequence，失败时进入“辅助（冻结敌人）”的 Selector 分支，体现 BT 的层次控制力。</li>
+<li>第三人称相机环绕与角色朝向物理扭矩旋转，使运动和镜头体验更自然。</li>
+<li>Kitten 牵引链与开门/掉钥匙等交互通过通用约束与碰撞回调统一处理，结构清晰，易扩展。</li>
+</ul>
+<h3 id="操作说明（默认）"><a href="#操作说明（默认）" class="headerlink" title="操作说明（默认）"></a>操作说明（默认）</h3><ul>
+<li>W/A/S/D：移动</li>
+<li>SPACE：跳跃</li>
+<li>L：锁定/解除锁定当前选中对象（相机跟随）</li>
+<li>鼠标移动：环绕镜头（锁定时）</li>
+<li>鼠标左键：在激活超能力时，向前发射 Ray 推击目标</li>
+<li>鼠标右键：对光标命中的选中对象施加力</li>
+<li>F1：重置关卡</li>
+<li>F2：重置相机</li>
+<li>F5：召唤友方（触发行为树）</li>
+</ul>
+<h3 id="技术细化：角色转向-寻路追踪-行为树-状态机"><a href="#技术细化：角色转向-寻路追踪-行为树-状态机" class="headerlink" title="技术细化：角色转向 / 寻路追踪 / 行为树 / 状态机"></a>技术细化：角色转向 / 寻路追踪 / 行为树 / 状态机</h3><h4 id="1-角色控制与朝向转向"><a href="#1-角色控制与朝向转向" class="headerlink" title="1) 角色控制与朝向转向"></a>1) 角色控制与朝向转向</h4><ul>
+<li>思路：使用相机右轴与水平前轴构建平面移动向量，保存 y 速度，计算目标方向，并用叉积轴 + 角度驱动扭矩，让刚体逐步朝目标方向旋转；相机采用 yaw/pitch 累积并通过四元数构建环绕视角。</li>
+<li>关键实现：<code>TutorialGame::LockedObjectMovement</code> 与 <code>RotateObjectTowards</code></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 角色输入合成目标速度、方向（保留y速度）</span></span><br><span class="line">Vector3 currentVelocity = selectionObject-&gt;GetPhysicsObject()-&gt;GetLinearVelocity();</span><br><span class="line">Vector3 targetVelocity = Vector3(<span class="number">0</span>, currentVelocity.y, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// W/S 沿相机前向，A/D 沿相机右轴，形成平面移动</span></span><br><span class="line"><span class="comment">// ...累加 targetVelocity 与 targetDirection</span></span><br><span class="line"><span class="comment">// 转向：用 currentForward 与 targetForward 的叉积求旋转轴，点积求夹角</span></span><br><span class="line">Vector3 rotationAxis = Vector::Cross(currentForward, targetForward);</span><br><span class="line"><span class="keyword">float</span> angle = <span class="built_in">acos</span>(Vector::Dot(currentForward, targetForward));</span><br><span class="line">Vector3 torque = rotationAxis * clamp(angle * k, <span class="number">0</span>, maxTorque);</span><br><span class="line">physics-&gt;AddTorque(torque);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>相机环绕：在 <code>UpdateGame</code> 中根据鼠标 deltaX/deltaY 调整 yaw/pitch，限制 pitch 区间，构造 yawQuat/pitchQuat 叠加，得到相机位置偏移并跟随 <code>lockedObject</code>。</li>
+</ul>
+<p>价值：保留物理一致性（扭矩转向），避免瞬时改变朝向导致的僵硬；相机与角色运动的耦合自然，可直接复用到第三人称项目。</p>
+<h4 id="2-敌人寻路与追踪（NavigationGrid-FSM）"><a href="#2-敌人寻路与追踪（NavigationGrid-FSM）" class="headerlink" title="2) 敌人寻路与追踪（NavigationGrid + FSM）"></a>2) 敌人寻路与追踪（NavigationGrid + FSM）</h4><ul>
+<li>路径生成：在生成 Goose 敌人时，使用 <code>NavigationGrid::FindPath(start,end,path)</code> 获取路径点，存入 <code>pathToFollow</code>，并在 <code>UpdateEnemyMovement</code> 中以恒速沿路径往返巡逻（首尾反向切换）。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 巡逻：朝当前路径点设置速度，接近阈值后切换到下一个点；到达末端后反向</span></span><br><span class="line">Vector3 direction = Normalise(targetPosition - currentPosition);</span><br><span class="line">enemy-&gt;GetPhysicsObject()-&gt;SetLinearVelocity(direction * patrolSpeed);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>追踪切换：<code>InitEnemyStateMachine</code><ul>
+<li>Patrol 状态：沿路径移动（绿色）。</li>
+<li>Chase 状态：直线朝玩家位置设置速度（红色）。</li>
+<li>转换：距离 &lt; 15 进入追击；距离 &gt; 20 回到巡逻。</li>
+</ul>
+</li>
+</ul>
+<p>价值：用极简的 FSM + 导航路径实现从“规律巡逻”到“情景追击”的行为切换，便于调参数与扩展更多感知条件（视野角、遮挡等）。</p>
+<h4 id="3-Keeper-视线驱动的追击-FSM（含-Raycast-可见性）"><a href="#3-Keeper-视线驱动的追击-FSM（含-Raycast-可见性）" class="headerlink" title="3) Keeper 视线驱动的追击 FSM（含 Raycast 可见性）"></a>3) Keeper 视线驱动的追击 FSM（含 Raycast 可见性）</h4><ul>
+<li>关键实现：<code>InitKeeperStateMachine</code><ul>
+<li>Idle：静止（蓝色）。</li>
+<li>Chase：只有当玩家“持有钥匙”且 Raycast 直线可见时才进入追击；一旦钥匙丢失或不可见则回到 Idle。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 条件：玩家持有钥匙 + 视线无遮挡</span></span><br><span class="line">Vector3 rayPos = keeper-&gt;GetTransform().GetPosition();</span><br><span class="line">Vector3 rayDir = Normalise(player-&gt;GetTransform().GetPosition() - rayPos);</span><br><span class="line"><span class="function">Ray <span class="title">ray</span><span class="params">(rayPos, rayDir)</span></span>;</span><br><span class="line"><span class="keyword">if</span> (world-&gt;Raycast(ray, hit, <span class="literal">true</span>, keeper) &amp;&amp; hit.node == player) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 进入追击</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>交互：在 <code>HandleCollision</code> 中若 Keeper 撞到 Cat 且 hasKey=true，则令 key 重新激活并清空 hasKey，实现“被抢走”。</li>
+</ul>
+<p>价值：以“条件驱动的可见性 + 物品状态”控制追击，减少无效追逐，提升玩法博弈感（拿钥匙就要小心躲避视线）。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=1436614177.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=731250.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=729638.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://music.163.com/song/media/outer/url?id=527479.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='http://music.163.com/song/media/outer/url?id=1417631440.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='http://music.163.com/song/media/outer/url?id=729835.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-20,"hOffset":0},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
